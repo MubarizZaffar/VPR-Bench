@@ -1,0 +1,17 @@
+1. Download the 'alexnet.caffemodel' from 'http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel', and copy to 'DIR/VPR-Bench/VPR_Techniques/AlexNet_VPR/alexnet/'.
+
+2. Download and extract the 'calc.caffemodel' from 'http://udel.edu/~nmerrill/calc.tar.gz', and copy to 'DIR/VPR-Bench/VPR_Techniques/CALC/model/'. 
+
+3. Download the 'AmosNet.caffemodel' from 'https://goo.gl/6xtjwD', and copy to 'DIR/VPR-Bench/VPR_Techniques/AmosNet/'.
+
+4. Download the 'HybridNet.caffemodel' from 'https://goo.gl/kF6nQh', and copy to 'DIR/VPR-Bench/VPR_Techniques/HybridNet/'.
+
+5. Download the tensorflow checkpoints for NetVLAD from 'http://rpg.ifi.uzh.ch/datasets/netvlad/vd16_pitts30k_conv5_3_vlad_preL2_intra_white.zip', extract and copy its content to the 'DIR/VPR-Bench/VPR_Techniques/NetVLAD/checkpoints/'.
+
+6. Download the 'alexnet_places365.caffemodel' from 'http://places2.csail.mit.edu/models_places365/alexnet_places365.caffemodel' and copy to '/DIR/VPR-Bench/VPR_Techniques/RegionVLAD/AlexnetPlaces365/'.
+
+7. Download the 'variation_quantified_datasets' folder from 'https://surfdrive.surf.nl/files/index.php/s/sbZRXzYe3l0v67W', extract it and copy its content to the folder 'VPR-Bench/variation_quantified_datasets/'. 
+
+8. (optional) There are 12 datasets used in our VPR-Bench paper, you can download these datasets (or necessary information to get them) from this link 'https://surfdrive.surf.nl/files/index.php/s/sbZRXzYe3l0v67W'. Since the corridor dataset is already available in this GitHub repo, you do not need to have downloaded these 12 datasets to get the VPR-Bench to work but obviously after the first trial, you would want to see performance on other datasets as well and this is where you need to go then. 
+
+9. (optional) Download precomputed matching information of the 10 techniques on the 12 datasets used in our work from 'https://surfdrive.surf.nl/files/index.php/s/ThIgFycwwhRCVZv', extract and copy it to the 'VPR-Bench/precomputed_matches/' folder.

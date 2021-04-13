@@ -1,0 +1,9 @@
+conda install -c anaconda opencv
+conda install -c anaconda scikit-learn
+conda install scikit-image=0.14.2
+conda install -c anaconda matplotlib
+conda install -c conda-forge shapely
+(optional) conda clean-a
+conda install -c conda-forge tensorflow
+conda install -c conda-forge caffe
+Resolve Caffe issue as per: https://stackoverflow.com/questions/30808735/error-when-using-classify-in-caffe

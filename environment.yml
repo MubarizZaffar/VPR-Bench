@@ -1,0 +1,16 @@
+name: myvprbenchenv
+channels:
+  - defaults
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=2.7
+  - opencv
+  - scikit-learn
+  - matplotlib
+  - shapely
+  - scikit-image
+  - caffe
+  - tensorflow
+  - natsort
+  - joblib
