@@ -10,6 +10,8 @@ See the accompanying file 'numpy_gt_create.py' to get an understanding of the re
 
 import numpy as np
 from sklearn.metrics import precision_recall_curve, auc, roc_curve, roc_auc_score
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 import csv
 import time
@@ -218,16 +220,16 @@ def draw_retrievalfps_vs_platformspeed(encoding_times, matching_times, vpr_techn
         
     print('VPR_fps',VPR_fps)
     
-    fig,axs=plt.subplots(1,len(vpr_techniques),figsize=(30,3))
+    fig,axs=plt.subplots(1,len(vpr_techniques),figsize=(30,3),squeeze=False)
     for itr,tech in enumerate(vpr_techniques):
         
-        axs[itr].plot(platform_velocity,camera_fps, label='FPS_Req')
+        axs[0,itr].plot(platform_velocity,camera_fps, label='FPS_Req')
         for i, vpr_fps_diffmapsize in enumerate(VPR_fps[tech]):    
-            axs[itr].plot(platform_velocity, np.repeat(vpr_fps_diffmapsize,len(platform_velocity)) ,label='FPS_VPR='+str('%.1f'%vpr_fps_diffmapsize)+' at Z='+str(int(no_of_map_images[i])))
+            axs[0,itr].plot(platform_velocity, np.repeat(vpr_fps_diffmapsize,len(platform_velocity)) ,label='FPS_VPR='+str('%.1f'%vpr_fps_diffmapsize)+' at Z='+str(int(no_of_map_images[i])))
 #        axs[0,itr].set_xticks(viewpoint_positions)
-        axs[itr].set(xlabel='Platform Speed (mps)', ylabel='Frames-Per-Second')
-        axs[itr].title.set_text(tech.replace("_Precomputed",""))
-        axs[itr].legend(loc="upper right")
+        axs[0,itr].set(xlabel='Platform Speed (mps)', ylabel='Frames-Per-Second')
+        axs[0,itr].title.set_text(tech.replace("_Precomputed",""))
+        axs[0,itr].legend(loc="upper right")
     fig.tight_layout()    
     fig.savefig('VPR_FPS_vs_PlatformSpeed_PDF.png')
 

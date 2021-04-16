@@ -10,6 +10,7 @@ Don't change the interface here to maintain the stack clean. A range of VPR tech
 @author: mubariz
 """
 import time
+import sys
     
 def selective_import(VPR_technique):
 
@@ -38,6 +39,9 @@ def selective_import(VPR_technique):
         
     elif (VPR_technique=='HOG'):
         from VPR_Techniques.HOG_VPR import compute_map_features, compute_query_desc, perform_VPR
+
+    else:
+        sys.exit("Method {} not supported. Please check if letters' case match exactly.".format(VPR_technique))
    
     return compute_map_features, compute_query_desc, perform_VPR     
 
