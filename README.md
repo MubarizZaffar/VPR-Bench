@@ -70,7 +70,7 @@ python main.py -em 0 -sm 1 -dn Corridor -ddir datasets/corridor/ -mdir precomput
 python main.py -em 0 -sm 0 -dn SPEDTEST -ddir datasets/SPEDTEST/ -mdir precomputed_matches/SPEDTEST/ -techs CoHOG_Precomputed CALC_Precomputed NetVLAD_Precomputed RegionVLAD_Precomputed
 ```
 
-- If you want to run the viewpoint and illumination invariance analysis of our work, change the 'VPR_evaluation_mode' in main.py to 1/2/3 (by default it is 0), to get this analysis on Point Features dataset, QUT Multi-lane dataset and MIT Multi-illumination dataset, respectively. You should have downloaded these datasets from (https://surfdrive.surf.nl/files/index.php/s/sbZRXzYe3l0v67W) and placed them in the 'variation_quantified_datasets' folder in the VPR-Bench repository/folder. Example execution is following.
+- If you want to run the viewpoint and illumination invariance analysis of our work, change the 'VPR_evaluation_mode' (-em) in main.py to 1/2/3 (by default it is 0), to get this analysis on Point Features dataset, QUT Multi-lane dataset and MIT Multi-illumination dataset, respectively. Example execution is following.
 
 ```
 python main.py -em 2 -techs NetVLAD RegionVLAD AMOSNet HybridNet CALC RegionVLAD CoHOG AlexNet_VPR
