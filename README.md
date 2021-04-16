@@ -73,7 +73,7 @@ python main.py -em 0 -sm 0 -dn SPEDTEST -ddir datasets/SPEDTEST/ -mdir precomput
 - If you want to run the viewpoint and illumination invariance analysis of our work, change the 'VPR_evaluation_mode' (-em) in main.py to 1/2/3 (by default it is 0), to get this analysis on Point Features dataset, QUT Multi-lane dataset and MIT Multi-illumination dataset, respectively. Example execution is following.
 
 ```
-python main.py -em 2 -techs NetVLAD RegionVLAD AMOSNet HybridNet CALC RegionVLAD CoHOG AlexNet_VPR
+python main.py -em 2 -techs NetVLAD RegionVLAD AMOSNet HybridNet CALC HOG CoHOG AlexNet_VPR
 
 ```
 
