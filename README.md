@@ -78,6 +78,6 @@ python main.py -em 2 -techs NetVLAD RegionVLAD AMOSNet HybridNet CALC HOG CoHOG 
 ```
 
 # Contacts
-You can send an email at mubarizzaffar@gmail.com, m.zaffar@tudelft.nl and s.garg@qut.edu.au for further guidance and/or questions. 
+You can send an email at mubarizzaffar at gmail dot com, m dot zaffar at tudelft dot nl or s dot garg at qut dot edu dot au for further guidance and/or questions.
 
 Important Note: For all the datasets and techniques, we have made our maximum effort to provide original citations and/or licenses within the respective folders, where possible and applicable. We request all users of VPR-Bench to be aware of (and use) the original citations and licenses in any of their works. If you have any concerns about this, please do send us an email.
