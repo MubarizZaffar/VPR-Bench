@@ -92,7 +92,7 @@ python main.py -em 0 -sm 1 -dn Corridor -ddir datasets/corridor/ -mdir precomput
 ```
 - If you want to use any of the other 12 datasets in our work, download them from here (https://surfdrive.surf.nl/files/index.php/s/sbZRXzYe3l0v67W), and set the dataset fields (-dn and -ddir) accordingly.
 
-- If you just want to use the matching data we had already computed for the 10 techniques on 12 datasets in our work, append '_Precomputed' to the name of a technique(s). You would need to have downloaded this matching data (https://surfdrive.surf.nl/files/index.php/s/ThIgFycwwhRCVZv). Also set the dataset path via -ddir for access to ground-truth data. This ground-truth data is present for all datasets in the 'VPR-Bench/datasets/' folder. An example usage is given below.
+- If you just want to use the matching data we had already computed for the 10 techniques on 12 datasets in our work, append '_Precomputed' to the name of a technique(s). This matching info is already available for corridor and SPEDTEST datasets in this repo, but for other datasets you would need to have downloaded this matching data (https://surfdrive.surf.nl/files/index.php/s/ThIgFycwwhRCVZv). Also set the dataset path via -ddir for access to ground-truth data. This ground-truth data is present for all datasets by default in the 'VPR-Bench/datasets/' folder. An example usage is given below.
 
 ```
 python main.py -em 0 -sm 0 -dn SPEDTEST -ddir datasets/SPEDTEST/ -mdir precomputed_matches/SPEDTEST/ -techs CoHOG_Precomputed CALC_Precomputed NetVLAD_Precomputed RegionVLAD_Precomputed
