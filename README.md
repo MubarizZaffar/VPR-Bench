@@ -11,7 +11,33 @@ This repository allows you to do the following two things:
 
 2. Compute the quantified limits of viewpoint and illumination invariance of VPR techniques on Point Features dataset, QUT Multi-lane dataset and MIT Multi-illumination dataset.
 
-Side Note: You can extend our codebase to include more datasets and techniques by following the templates described in the appendix of our paper. For further understanding these templates, dig into the 'VPR_techniques' and 'helper_functions' folders of this repository.
+### List of Techniques
+1. NetVLAD [R. Arandjelović et al; https://arxiv.org/abs/1511.07247]
+2. RegionVLAD [Khaliq et al; https://ieeexplore.ieee.org/document/8944012]
+3. CoHOG [Zaffar et al; https://ieeexplore.ieee.org/document/8972582]
+4. HOG [Dalal at al; OpenCV Implementation]
+5. AlexNet [Krizhevsky et al; https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf]
+6. AMOSNet [Chen et al; https://ieeexplore.ieee.org/document/7989366]
+7. HybridNet [Chen et al; https://ieeexplore.ieee.org/document/7989366]
+8. CALC [Merrill et al; http://www.roboticsproceedings.org/rss14/p32.pdf]
+9. DenseVLAD (Results-only) [Torii et al; https://ieeexplore.ieee.org/document/7298790]
+10. AP-GeM (Results-only) [Revaud et al; https://ieeexplore.ieee.org/document/9010047]
+### List of Datasets
+1. ESSEX3IN1 [Zaffar et al; https://ieeexplore.ieee.org/document/9126220]
+2. Tokyo24/7 [R. Arandjelović et al; https://arxiv.org/abs/1511.07247]
+3. SPEDTest [Chen et al; https://ieeexplore.ieee.org/document/8421024]
+4. Synthia [Ros et al; https://ieeexplore.ieee.org/document/7780721]
+5. Nordland [Skrede et al; https://bit.ly/2QVBOym]
+6. Gardens Point [Glover et al; https://doi.org/10.5281/zenodo.4590133]
+7. INRIA Holidays [Jegou et al; https://lear.inrialpes.fr/pubs/2008/JDS08/jegou_hewgc08.pdf]
+8. Pittsburgh Query [R. Arandjelović et al; https://arxiv.org/abs/1511.07247]
+9. Cross-Seasons [Larsson et al; https://ieeexplore.ieee.org/document/8953253]
+10. Corridor [Milford et al; https://journals.sagepub.com/doi/abs/10.1177/0278364913490323]
+11. Living Room [Milford et al; https://ieeexplore.ieee.org/document/7487686]
+12. 17 Places [Sahdev et al; https://ieeexplore.ieee.org/document/7801503]
+ 
+
+Side Note: You can extend our codebase to include more datasets (or use full versions of some datasets) and techniques by following the templates described in the appendix of our paper. For further understanding these templates, dig into the 'VPR_techniques' and 'helper_functions' folders of this repository.
 
 ## Dependencies
 
