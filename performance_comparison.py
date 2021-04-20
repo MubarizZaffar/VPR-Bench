@@ -140,7 +140,7 @@ def save_results(tech,dataset,retrieved,matches,scores_all,encoding_time,matchin
     ts = time.time()
     ts_datetime='' # Replace '' with str(datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')) if you would like to save files with timestamp
     
-    with open('VPR_Bench_Results/'+tech+'_'+dataset+'-VPRBench'+ts_datetime+'.csv', 'a') as csvfile:
+    with open('results/VPR_Bench_Results/'+tech+'_'+dataset+'-VPRBench'+ts_datetime+'.csv', 'a') as csvfile:
         my_writer = csv.writer(csvfile, delimiter=',', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
     
         for i in range(len(retrieved)):   
@@ -164,7 +164,7 @@ def draw_RecallRateAtKCurves(recallrate_at_K_dict,sampleNpoints,vpr_techniques,d
     
     plt.title(dataset)
     plt.grid()     
-    plt.savefig('RecallRateCurves/'+dataset+'-RecallRateCurves'+'.png') 
+    plt.savefig('results/RecallRateCurves/'+dataset+'-RecallRateCurves'+'.png') 
 #    plt.show()     
 
 def draw_ROC_Curves(fpr_dict,tpr_dict,techniques,dataset):
@@ -179,7 +179,7 @@ def draw_ROC_Curves(fpr_dict,tpr_dict,techniques,dataset):
     
     plt.title(dataset)
     plt.grid()     
-    plt.savefig('ROCCurves/'+dataset+'-ROCcurves'+'.png') 
+    plt.savefig('results/ROCCurves/'+dataset+'-ROCcurves'+'.png') 
 #    plt.show()    
      
 def draw_PR_Curves(prec_dict,recall_dict,techniques,dataset):   
@@ -194,7 +194,7 @@ def draw_PR_Curves(prec_dict,recall_dict,techniques,dataset):
 
     plt.title(dataset)    
     plt.grid()     
-    plt.savefig('PRCurves/'+dataset+'-PRcurves'+'.png') 
+    plt.savefig('results/PRCurves/'+dataset+'-PRcurves'+'.png') 
 #    plt.show()           
 
 def draw_retrievalfps_vs_platformspeed(encoding_times, matching_times, vpr_techniques, const_distance=2): # Where const_distance=1 means that 1 frame must be available every 2 meters
@@ -231,7 +231,7 @@ def draw_retrievalfps_vs_platformspeed(encoding_times, matching_times, vpr_techn
         axs[0,itr].title.set_text(tech.replace("_Precomputed",""))
         axs[0,itr].legend(loc="upper right")
     fig.tight_layout()    
-    fig.savefig('VPR_FPS_vs_PlatformSpeed_PDF.png')
+    fig.savefig('results/VPR_FPS_vs_PlatformSpeed/'+'VPR_FPS_vs_PlatformSpeed.png')
 
 def draw_retrieval_vs_distance(distance_btw_matches_info, techniques, dataset):
 
@@ -246,7 +246,7 @@ def draw_retrieval_vs_distance(distance_btw_matches_info, techniques, dataset):
     
     plt.title(dataset)    
     plt.grid()
-    plt.savefig('Retrieval_vs_Distance_Curves/'+dataset+'-Retrieval_vs_Distance_Curves'+'.png') 
+    plt.savefig('results/Retrieval_vs_Distance_Curves/'+dataset+'-Retrieval_vs_Distance_Curves'+'.png') 
 #    plt.show() 
         
 def compute_matches(retrieved_all, ground_truth_info):

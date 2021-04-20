@@ -15,7 +15,7 @@ import csv
 
 def create_datasetspecific_VPR_summary(techniques, dataset, auc_pr_dict, auc_roc_dict, pcu_dict, ep_dict, encoding_time_all, matching_time_all, RMF_dict, descriptor_shape_dict) :
     
-    with open('dataset_specific_VPR_summary/'+dataset.replace('/','-')+'.csv', 'a') as csvfile:
+    with open('results/dataset_specific_VPR_summary/'+dataset.replace('/','-')+'.csv', 'a') as csvfile:
         my_writer = csv.writer(csvfile, delimiter=',', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
         row='Technique Names,'
         for tech in techniques:
