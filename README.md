@@ -2,7 +2,7 @@
 
 ## What is VPR-Bench
 
-VPR-Bench is an open-source Visual Place Recognition evaluation framework with quantifiable viewpoint and illumination invariance. This repository represents the open-source release relating to our VPR-Bench paper published in the International Journal of Computer Vision, which you can access here: 'PAPERLINK to appear soon'. 
+VPR-Bench is an open-source Visual Place Recognition evaluation framework with quantifiable viewpoint and illumination invariance. This repository represents the open-source release relating to our VPR-Bench paper published in the International Journal of Computer Vision, which you can access [here](https://doi.org/10.1007/s11263-021-01469-5). 
 ![VPR-Bench Block Diagram](VPRBench.jpg)
 
 This repository allows you to do the following two things:
@@ -109,3 +109,8 @@ python main.py -em 2 -techs NetVLAD RegionVLAD AMOSNet HybridNet CALC HOG CoHOG 
 You can send an email at mubarizzaffar at gmail dot com, m dot zaffar at tudelft dot nl or s dot garg at qut dot edu dot au for further guidance and/or questions.
 
 Important Note: For all the datasets and techniques, we have made our maximum effort to provide original citations and/or licenses within the respective folders, where possible and applicable. We request all users of VPR-Bench to be aware of (and use) the original citations and licenses in any of their works. If you have any concerns about this, please do send us an email.
+
+# Cite as
+If you find this work useful, please cite as:
+
+Zaffar, M., Garg, S., Milford, M. et al. VPR-Bench: An Open-Source Visual Place Recognition Evaluation Framework with Quantifiable Viewpoint and Appearance Change. Int J Comput Vis (2021). https://doi-org.tudelft.idm.oclc.org/10.1007/s11263-021-01469-5
