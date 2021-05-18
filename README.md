@@ -113,6 +113,7 @@ Important Note: For all the datasets and techniques, we have made our maximum ef
 # Cite as
 If you find this work useful, please cite as:
 
+```
 @article{zaffar2021vpr,
   title={Vpr-bench: An open-source visual place recognition evaluation framework with quantifiable viewpoint and appearance change},
   author={Zaffar, Mubariz and Garg, Sourav and Milford, Michael and Kooij, Julian and Flynn, David and McDonald-Maier, Klaus and Ehsan, Shoaib},
@@ -121,3 +122,4 @@ If you find this work useful, please cite as:
   year={2021},
   publisher={Springer}
 }
+```
