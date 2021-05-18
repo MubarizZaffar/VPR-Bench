@@ -113,4 +113,11 @@ Important Note: For all the datasets and techniques, we have made our maximum ef
 # Cite as
 If you find this work useful, please cite as:
 
-Zaffar, M., Garg, S., Milford, M. et al. VPR-Bench: An Open-Source Visual Place Recognition Evaluation Framework with Quantifiable Viewpoint and Appearance Change. Int J Comput Vis (2021). https://doi-org.tudelft.idm.oclc.org/10.1007/s11263-021-01469-5
+@article{zaffar2021vpr,
+  title={Vpr-bench: An open-source visual place recognition evaluation framework with quantifiable viewpoint and appearance change},
+  author={Zaffar, Mubariz and Garg, Sourav and Milford, Michael and Kooij, Julian and Flynn, David and McDonald-Maier, Klaus and Ehsan, Shoaib},
+  journal={International Journal of Computer Vision},
+  pages={1--39},
+  year={2021},
+  publisher={Springer}
+}
