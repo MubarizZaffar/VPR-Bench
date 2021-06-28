@@ -5,7 +5,7 @@ echo ${BenchDIR}
 
 echo "Downloading AlexNet Model Files"
 cd ${BenchDIR}/VPR_Techniques/AlexNet_VPR/alexnet/
-wget http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel
+wget https://surfdrive.surf.nl/files/index.php/s/KcGZjv5cn35JuJd/download
 
 echo "Downloading CALC Model Files"
 cd  ${BenchDIR}/VPR_Techniques/CALC/model/
