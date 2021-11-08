@@ -105,6 +105,15 @@ python main.py -em 2 -techs NetVLAD RegionVLAD AMOSNet HybridNet CALC HOG CoHOG 
 
 ```
 
+# Related External Resources
+## Datasets
+Tokyo 24/7:https://github.com/Relja/netvlad
+17 Places: https://www.raghavendersahdev.com/place-recognition.html
+
+## Techniques
+AP-GeM: https://github.com/naver/deep-image-retrieval
+DenseVLAD: http://www.ok.ctrl.titech.ac.jp/~torii/project/247/
+
 # Contacts
 You can send an email at mubarizzaffar at gmail dot com, m dot zaffar at tudelft dot nl or s dot garg at qut dot edu dot au for further guidance and/or questions.
 
