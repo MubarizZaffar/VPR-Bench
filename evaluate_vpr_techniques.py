@@ -101,8 +101,13 @@ def evaluate_vpr_techniques(dataset_dir,precomputed_directory,techniques, save_d
             encoding_time_dict[vpr_tech]=encoding_time/itr  #Average Feature Encoding Time 
             matching_time_dict[vpr_tech]=matching_time/itr  #Average Descriptor Matching Time
             descriptor_shape_dict[vpr_tech]=descriptor_shape
-            
-            precomputed_data=np.asarray([np.asarray(query_indices_list), np.asarray(matching_indices_list), np.asarray(matching_scores_list), np.asarray(all_retrievedindices_scores_allqueries), encoding_time/itr, matching_time/itr])
+
+            precomputed_data=np.row_stack(np.broadcast_arrays(np.asarray(query_indices_list),
+                                                              np.asarray(matching_indices_list),
+                                                              np.asarray(matching_scores_list),
+                                                              np.asarray(all_retrievedindices_scores_allqueries),
+                                                              encoding_time//itr,
+                                                              matching_time//itr))
           
             if (save_descriptors==1):
                 cwd=os.getcwd()

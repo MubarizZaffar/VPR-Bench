@@ -109,10 +109,10 @@ def compute_query_desc(query):
     #        print('Entropy Time:',time.time()-ent_time)
         
         ################# Finding Regions #####################
-        local_goodness=np.zeros([magic_height/cell_size-1,magic_width/cell_size-1],dtype=np.float32)
+        local_goodness=np.zeros([magic_height//cell_size-1, magic_width//cell_size-1], dtype=np.float32)
         
-        for a in range (magic_height/cell_size-1):
-            for b in range (magic_width/cell_size-1):
+        for a in range (magic_height//cell_size-1):
+            for b in range (magic_width//cell_size-1):
     #                local_staticity=1 #Disabling staticity here, can be accommodated in future by employing YOLO etc.
                 local_entropy = np.sum(entropy_image[a*cell_size:a*cell_size + 2*cell_size, b*cell_size:b*cell_size + 2*cell_size])/(8*(cell_size*4*cell_size))
     
