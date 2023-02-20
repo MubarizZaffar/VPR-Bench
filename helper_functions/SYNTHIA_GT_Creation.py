@@ -53,4 +53,4 @@ np.save(newgt_path,gt_new)
 
 gt_new_read=np.load(newgt_path)
 for i in range(len(gt_new_read)):
-    print(gt_new_read[i])
+    print((gt_new_read[i]))

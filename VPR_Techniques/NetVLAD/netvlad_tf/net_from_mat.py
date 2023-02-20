@@ -4,7 +4,7 @@ from os.path import dirname
 import scipy.io as scio
 import tensorflow as tf
 
-import layers as layers
+from . import layers as layers
 
 #%% Spyder section for debugging.
 
@@ -48,7 +48,7 @@ def netFromMat():
 
             # Print layer info
             assert hasattr(layer, 'name')
-            print('%02d: %s: %s' % (i + 1, layer.name, layer.type))
+            print(('%02d: %s: %s' % (i + 1, layer.name, layer.type)))
 
             if layer.type == 'conv':
                 w = layer.weights[0]
@@ -121,7 +121,7 @@ def netFromMat():
             else:
                 raise Exception('Unknown layer type %s' % layer.type)
 
-            print(tf_layers[-1].shape)
+            print((tf_layers[-1].shape))
     #%% Spyder section for debugging.
 
     return tf_layers

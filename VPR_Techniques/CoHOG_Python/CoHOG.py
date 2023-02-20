@@ -14,8 +14,8 @@ Created on Thu Jan  3 11:18:57 2019
 
 import cv2
 import numpy as np
-from Hog_feature.Hog_feature.hog import initialize
-from Hog_feature.Hog_feature.hog import extract
+from .Hog_feature.Hog_feature.hog import initialize
+from .Hog_feature.Hog_feature.hog import extract
 from skimage.util import img_as_ubyte
 from skimage.filters.rank import entropy
 from skimage.morphology import disk
@@ -49,8 +49,8 @@ ref_desc=[]
 def largest_indices_thresholded(ary):
     good_list=np.where(ary>=ET)
 #    no_of_good_regions=len(good_list[0])
-    print(len(good_list))
-    print(len(good_list[0]))
+    print((len(good_list)))
+    print((len(good_list[0])))
     
     return good_list 
 
@@ -124,7 +124,7 @@ def compute_query_desc(query):
                     local_goodness[a,b]=0    
 
         regional_goodness=local_goodness.flatten()
-        print(sum(regional_goodness))  
+        print((sum(regional_goodness)))  
         outlist.append(vector_2)
         outlist.append(regional_goodness)
         

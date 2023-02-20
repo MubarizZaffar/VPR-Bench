@@ -40,7 +40,7 @@ def compute_query_desc(query):
     query_desc=hog.compute(cv2.resize(query, winSize))
     
     print(query_desc)
-    print(query_desc.shape)
+    print((query_desc.shape))
     
     return query_desc
 
@@ -54,7 +54,7 @@ def perform_VPR(query_desc,ref_map_features): #ref_map_features is a 1D list of 
         ref_desc=ref_desc.astype('float64')
         score=np.dot(query_desc.T,ref_desc)/(np.linalg.norm(query_desc)*np.linalg.norm(ref_desc))
         t2=time.time()
-        print('HOG tm:',t2-t1)
+        print(('HOG tm:',t2-t1))
         confusion_vector[itr]=score
         itr=itr+1
         

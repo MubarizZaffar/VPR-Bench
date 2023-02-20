@@ -12,11 +12,11 @@ import os
    
 def compute_map_features(ref_map):   
     mean_npy = np.load(str(os.path.abspath(os.curdir))+'/VPR_Techniques/AmosNet/amosnet_mean.npy') # Input numpy array
-    print('Mean Array Shape:' + str(mean_npy.shape))
+    print(('Mean Array Shape:' + str(mean_npy.shape)))
     net = caffe.Net(str(os.path.abspath(os.curdir))+'/VPR_Techniques/AmosNet/deploy.prototxt', str(os.path.abspath(os.curdir))+'/VPR_Techniques/AmosNet/AmosNet.caffemodel', caffe.TEST)
     
     transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})
-    print(net.blobs['data'].data.shape)
+    print((net.blobs['data'].data.shape))
     transformer.set_transpose('data', (2,0,1))  # move image channels to outermost dimension
     transformer.set_mean('data', mean_npy)            # subtract the dataset-mean value in each channel
     transformer.set_raw_scale('data', 255)      # rescale from [0, 1] to [0, 255]
@@ -87,11 +87,11 @@ def compute_map_features(ref_map):
 def compute_query_desc(image_query):
     
     mean_npy = np.load(str(os.path.abspath(os.curdir))+'/VPR_Techniques/AmosNet/amosnet_mean.npy') # Input numpy array
-    print('Mean Array Shape:' + str(mean_npy.shape))
+    print(('Mean Array Shape:' + str(mean_npy.shape)))
     net = caffe.Net(str(os.path.abspath(os.curdir))+'/VPR_Techniques/AmosNet/deploy.prototxt', str(os.path.abspath(os.curdir))+'/VPR_Techniques/AmosNet/AmosNet.caffemodel', caffe.TEST)
    
     transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})
-    print(net.blobs['data'].data.shape)
+    print((net.blobs['data'].data.shape))
     transformer.set_transpose('data', (2,0,1))  # move image channels to outermost dimension
     transformer.set_mean('data', mean_npy)            # subtract the dataset-mean value in each channel
     transformer.set_raw_scale('data', 255)      # rescale from [0, 1] to [0, 255]

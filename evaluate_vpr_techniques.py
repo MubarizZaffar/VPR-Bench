@@ -28,7 +28,7 @@ def evaluate_vpr_techniques(dataset_dir,precomputed_directory,techniques, save_d
         query_images_names=[os.path.basename(x) for x in glob.glob(query_dir+'*.jpg')]
     
         for image_name in sorted(ref_images_names,key=lambda x:int(x.split(".")[0])):  #Reading all the reference images into a list
-            print('Reading Image: ' + ref_dir+image_name)
+            print(('Reading Image: ' + ref_dir+image_name))
             ref_image=cv2.imread(ref_dir+image_name)
             if (ref_image is not None):
                 ################### Optional Resize Provision ###################
@@ -40,10 +40,10 @@ def evaluate_vpr_techniques(dataset_dir,precomputed_directory,techniques, save_d
                 ref_image = cv2.resize(ref_image, dim, interpolation = cv2.INTER_AREA)
                 #####################################################
                 ref_images_list.append(ref_image)
-                print(ref_image.shape[1],ref_image.shape[0])
+                print((ref_image.shape[1],ref_image.shape[0]))
                 ref_image=None
             else:
-                print(ref_dir+image_name+' not a valid image!')
+                print((ref_dir+image_name+' not a valid image!'))
             
     query_indices_dict={}
     matching_indices_dict={}
@@ -91,7 +91,7 @@ def evaluate_vpr_techniques(dataset_dir,precomputed_directory,techniques, save_d
                     descriptor_shape=str(ref_images_desc[0].shape)+' '+str(ref_images_desc[0].dtype)
                     
                 else:
-                    print(query_dir+image_name+' not a valid image!')
+                    print((query_dir+image_name+' not a valid image!'))
             
 
             query_indices_dict[vpr_tech]=query_indices_list        
@@ -116,7 +116,7 @@ def evaluate_vpr_techniques(dataset_dir,precomputed_directory,techniques, save_d
         else:
             cwd=os.getcwd()
             precomputed_data=np.load(cwd+'/'+precomputed_directory+vpr_tech.replace("_Precomputed","")+'/'+'precomputed_data_corrected.npy',allow_pickle=True )
-            print(precomputed_data.shape)
+            print((precomputed_data.shape))
             
             query_indices_dict[vpr_tech]=precomputed_data[0]        
             matching_indices_dict[vpr_tech]=precomputed_data[1]

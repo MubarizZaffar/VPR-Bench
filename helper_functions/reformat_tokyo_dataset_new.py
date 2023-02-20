@@ -44,7 +44,7 @@ positives_within_25_meters = np.array([np.argwhere(dMat[:,qIdx] <= 25).flatten()
 ref_dict={}
 ref_itr=0
 total_queries=len(db['qImage'])
-print(list(db.keys()))
+print((list(db.keys())))
 total_ref=len(db['dbImage'])
 print(total_ref)
 gt_new=np.zeros((total_queries,2), dtype=np.ndarray)
@@ -63,7 +63,7 @@ for itr in range(total_queries):
             
             ref=cv2.imread(key)
             if (ref is None):
-                print('ref image not found. Path: ', key)
+                print(('ref image not found. Path: ', key))
             else:
                 print('Write image')
                 ref_dict[key]=ref_itr
@@ -83,7 +83,7 @@ for itr in range (total_ref):
     if key not in ref_dict:
         ref=cv2.imread(key)
         if (ref is None):
-            print('ref image not found. Path: ', key)
+            print(('ref image not found. Path: ', key))
         else:
             print('Write image')
             ref_dict[key]=ref_itr
@@ -100,7 +100,7 @@ for itr in range(total_queries):
         ref=cv2.imread(key)
         
         if (ref is None):
-            print('ref image not found. Path: ', key)
+            print(('ref image not found. Path: ', key))
         else:
             print('Ground-truth Added')
             my_list.append(ref_dict[key])

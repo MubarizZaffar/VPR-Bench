@@ -38,7 +38,7 @@ def compute_auc_PR(prec,recall): #Area-under-the-Precision-Recall-Curve
     return auc(recall, prec)
 
 def compute_pcu(precision,recall,encoding_times, vpr_technique): #Performance-per-Compute-Unit
-    PCU=precision[np.argwhere(recall==1)] * np.log10((np.amax(encoding_times.values())/encoding_times[vpr_technique]) + 9)
+    PCU=precision[np.argwhere(recall==1)] * np.log10((np.amax(list(encoding_times.values()))/encoding_times[vpr_technique]) + 9)
     return PCU
 
 def compute_accuracy(matches):
@@ -63,13 +63,13 @@ def distance_vs_localisation(matches,inter_frame_distance=1):
                 prev_match_index=curr_match_index
     
     distance_btw_matches_array=np.asarray(distance_btw_matches).reshape(len(distance_btw_matches))
-    bins=range(max(distance_btw_matches_array)+1)
+    bins=list(range(max(distance_btw_matches_array)+1))
     distance_btw_matches_hist=np.bincount(distance_btw_matches_array) 
 
     return [distance_btw_matches_hist,bins]
 
 def compute_RecallRateAtN_forRange(all_retrievedindices_scores_allqueries, ground_truth_info):
-    sampleNpoints=range(1,20) #Can be changed to range(1,0.1*len(all_retrievedindices_scores_allqueries[0])) for maximum N equal to 10% of the total reference images
+    sampleNpoints=list(range(1,20)) #Can be changed to range(1,0.1*len(all_retrievedindices_scores_allqueries[0])) for maximum N equal to 10% of the total reference images
     recallrate_values=np.zeros(len(sampleNpoints))
     itr=0
     for N in sampleNpoints:      
@@ -203,9 +203,9 @@ def draw_retrievalfps_vs_platformspeed(encoding_times, matching_times, vpr_techn
     
     platform_velocity=np.arange(0,100,5)
     camera_fps=(1.0/const_distance)*platform_velocity   #These are the values of camera FPS required to have a frame at const_distance given platform_velocity. 
-    print('camera_fps', camera_fps)
+    print(('camera_fps', camera_fps))
     no_of_map_images=np.array([1,10,100,500,1000,5000])
-    print('no_of_map_images',no_of_map_images)
+    print(('no_of_map_images',no_of_map_images))
     search_costs=1*no_of_map_images   #(1) is the worst case linear search, you can change this to logarithmic etc. depending on your search mechanism.
     
     VPR_fps={}
@@ -218,7 +218,7 @@ def draw_retrievalfps_vs_platformspeed(encoding_times, matching_times, vpr_techn
         print(vpr_fps_differentsearch)
         VPR_fps[vpr_technique]=vpr_fps_differentsearch
         
-    print('VPR_fps',VPR_fps)
+    print(('VPR_fps',VPR_fps))
     
     fig,axs=plt.subplots(1,len(vpr_techniques),figsize=(30,3),squeeze=False)
     for itr,tech in enumerate(vpr_techniques):
@@ -311,14 +311,14 @@ def performance_comparison(dataset_name, dataset_directory,vpr_techniques,query_
     draw_RecallRateAtKCurves(recallrate_at_K_dict,sampleNpoints,vpr_techniques,dataset_name)    
     draw_retrieval_vs_distance(distance_btw_matches_hist_dict,vpr_techniques,dataset_name)
 
-    print('AUC PR:-',auc_pr_dict)
-    print('AUC ROC:-',auc_roc_dict)
-    print('PCU:-',pcu_dict)
-    print('EP:-',ep_dict)
-    print('Encoding Time:-',encoding_time_all)
-    print('Matching Time:-',matching_time_all)
-    print('RMF_dict',RMF_dict)
-    print('AUC_ROC_dict',auc_roc_dict)    
-    print('recallrate_at_K_dict', recallrate_at_K_dict)  
-    print('descriptor_shape_dict', descriptor_shape_dict)    
+    print(('AUC PR:-',auc_pr_dict))
+    print(('AUC ROC:-',auc_roc_dict))
+    print(('PCU:-',pcu_dict))
+    print(('EP:-',ep_dict))
+    print(('Encoding Time:-',encoding_time_all))
+    print(('Matching Time:-',matching_time_all))
+    print(('RMF_dict',RMF_dict))
+    print(('AUC_ROC_dict',auc_roc_dict))    
+    print(('recallrate_at_K_dict', recallrate_at_K_dict))  
+    print(('descriptor_shape_dict', descriptor_shape_dict))    
 

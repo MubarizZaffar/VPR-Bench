@@ -32,7 +32,7 @@ class ImageDescriptor(object):
                 if i == len(jpeg_paths):
                     break
                 if verbose:
-                    print('%d/%d' % (i, len(jpeg_paths)))
+                    print(('%d/%d' % (i, len(jpeg_paths))))
                 if self.is_grayscale:
                     image = cv2.imread(jpeg_paths[i], cv2.IMREAD_GRAYSCALE)
                     images.append(np.expand_dims(

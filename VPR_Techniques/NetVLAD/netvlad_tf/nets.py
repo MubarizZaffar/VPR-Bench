@@ -4,7 +4,7 @@ from os.path import dirname
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-import layers as layers
+from . import layers as layers
 
 def defaultCheckpoint():
     return os.path.join(dirname(dirname(__file__)), 
