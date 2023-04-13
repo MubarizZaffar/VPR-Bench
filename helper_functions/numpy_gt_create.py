@@ -15,11 +15,11 @@ dataset_directory='/media/VPR_datasets/CampusLoop/'
 save_dir=dataset_directory+'ground_truth_new.npy'
 
 gt=np.zeros([total_query_images,2])# First column is query image index, second column is list of indices of correct matches for the query images
-refs=range(total_ref_images)
+refs=list(range(total_ref_images))
 
 for query in range(total_query_images):
     gt[query][0]=int(query) 
-    gt[query][1]=range(int(max(0,query-1)),int(min(total_ref_images,query+1)))  #List of all the correct matches for query image: 'query'    
+    gt[query][1]=list(range(int(max(0,query-1)),int(min(total_ref_images,query+1))))  #List of all the correct matches for query image: 'query'    
 
 print(gt)    
 np.save(save_dir,gt)    

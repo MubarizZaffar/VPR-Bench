@@ -41,8 +41,8 @@ def perform_vpr_invariance_analysis(variation_quantified_dataset_directory,VPR_t
     illumination_variation_mismatch_scores_dict={} # Matching scores of different places for comparison with above
     illumination_variations_ABC_dict={}
     
-    viewpoint_positions=range(119)  #Total 119 different camera positions labelled between 1-119, see paper for more details
-    illumination_variations=range(19)  #Total 19 different LED illumination labelled between 1-19, see paper for more details
+    viewpoint_positions=list(range(119))  #Total 119 different camera positions labelled between 1-119, see paper for more details
+    illumination_variations=list(range(19))  #Total 19 different LED illumination labelled between 1-19, see paper for more details
 
     if (results_already_exist==True): #If you have previously run the code for some techniques and just want to plot the results. False by default.
         f1=open('invariance_dict/viewpoint_variations_varied_scores_dict.pkl','rb')
@@ -141,8 +141,8 @@ def perform_vpr_invariance_analysis(variation_quantified_dataset_directory,VPR_t
             row=1
             col=itr-4
             
-        axs[row,col].plot(range(1,120),viewpoint_variations_varied_scores_dict[tech], label='Same Place')
-        axs[row,col].plot(range(1,120),viewpoint_variations_mismatch_scores_dict[tech], label='Different Place')
+        axs[row,col].plot(list(range(1,120)),viewpoint_variations_varied_scores_dict[tech], label='Same Place')
+        axs[row,col].plot(list(range(1,120)),viewpoint_variations_mismatch_scores_dict[tech], label='Different Place')
 #        axs[0,itr].set_xticks(viewpoint_positions)
         axs[row,col].set(xlabel='Viewpoint Position', ylabel='Matching Score')
         axs[row,col].title.set_text(tech+', ABC='+str("%0.2f"%abc))
@@ -167,8 +167,8 @@ def perform_vpr_invariance_analysis(variation_quantified_dataset_directory,VPR_t
             row=3
             col=itr-4
             
-        axs[row,col].plot(range(1,20),illumination_variation_varied_scores_dict[tech], label='Same Place')
-        axs[row,col].plot(range(1,20),illumination_variation_mismatch_scores_dict[tech], label='Different Place')
+        axs[row,col].plot(list(range(1,20)),illumination_variation_varied_scores_dict[tech], label='Same Place')
+        axs[row,col].plot(list(range(1,20)),illumination_variation_mismatch_scores_dict[tech], label='Different Place')
 #        axs[0,itr].set_xticks(viewpoint_positions)
         axs[row,col].set(xlabel='Illumination State', ylabel='Matching Score')
         axs[row,col].title.set_text(tech+', ABC='+str("%0.2f"%abc))
@@ -218,7 +218,7 @@ def perform_vpr_viewpointinvariance_analysis_validation(variation_quantified_val
     viewpoint_variations_mismatch_scores_dict={} # Matching scores of different places for comparison with above
     viewpoint_variations_ABC_dict={} #ABC is area-between-the-curves
 
-    viewpoint_positions=range(15)  #Total 15 different camera positions labelled between 1-14, see paper for more details
+    viewpoint_positions=list(range(15))  #Total 15 different camera positions labelled between 1-14, see paper for more details
 
     for tech in VPR_techniques:
         matching_scores_varied_with_varied_viewpoint_and_fixed_illumination=np.zeros(len(viewpoint_positions)) #Image at viewpoint position 1 is matched with itself and with all other different viewpoint positions
@@ -273,8 +273,8 @@ def perform_vpr_viewpointinvariance_analysis_validation(variation_quantified_val
             row=1
             col=itr-4
             
-        axs[row,col].plot(range(1,len(viewpoint_positions)+1),viewpoint_variations_varied_scores_dict[tech], label='Same Place')
-        axs[row,col].plot(range(1,len(viewpoint_positions)+1),viewpoint_variations_mismatch_scores_dict[tech], label='Different Place')
+        axs[row,col].plot(list(range(1,len(viewpoint_positions)+1)),viewpoint_variations_varied_scores_dict[tech], label='Same Place')
+        axs[row,col].plot(list(range(1,len(viewpoint_positions)+1)),viewpoint_variations_mismatch_scores_dict[tech], label='Different Place')
 #        axs[0,itr].set_xticks(viewpoint_positions)
         axs[row,col].set(xlabel='Viewpoint Position', ylabel='Matching Score')
         axs[row,col].title.set_text(tech+', ABC='+str("%0.2f"%abc))
@@ -295,7 +295,7 @@ def perform_vpr_illuminationinvariance_analysis_validation(illumination_quantifi
     illumination_variations_mismatch_scores_dict={} # Matching scores of different places for comparison with above
     illumination_variations_ABC_dict={} #ABC is area-between-the-curves
 
-    illumination_positions=range(25)  #Total 119 different camera positions labelled between 1-119, see paper for more details
+    illumination_positions=list(range(25))  #Total 119 different camera positions labelled between 1-119, see paper for more details
 
     for tech in VPR_techniques:
         matching_scores_varied_with_fixed_viewpoint_and_varied_illumination=np.zeros(len(illumination_positions)) #Image at viewpoint position 1 is matched with itself and with all other different viewpoint positions
@@ -352,8 +352,8 @@ def perform_vpr_illuminationinvariance_analysis_validation(illumination_quantifi
             row=1
             col=itr-4
             
-        axs[row,col].plot(range(1,len(illumination_positions)+1),illumination_variations_varied_scores_dict[tech], label='Same Place')
-        axs[row,col].plot(range(1,len(illumination_positions)+1),illumination_variations_mismatch_scores_dict[tech], label='Different Place')
+        axs[row,col].plot(list(range(1,len(illumination_positions)+1)),illumination_variations_varied_scores_dict[tech], label='Same Place')
+        axs[row,col].plot(list(range(1,len(illumination_positions)+1)),illumination_variations_mismatch_scores_dict[tech], label='Different Place')
 #        axs[0,itr].set_xticks(viewpoint_positions)
         axs[row,col].set(xlabel='Illumination State', ylabel='Matching Score')
         axs[row,col].title.set_text(tech+', ABC='+str("%0.2f"%abc))

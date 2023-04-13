@@ -137,9 +137,9 @@ def compute_map_features(ref_map_images):
         # Stack the activations of feature maps to make local descriptors
         Features[layer] = np.array(net.blobs[layer].data[0].copy())
         
-        print(Features[layer].shape)
+        print((Features[layer].shape))
         StackedFeatures[layer]=Features[layer].transpose(1,2,0)
-        print(StackedFeatures[layer].shape)
+        print((StackedFeatures[layer].shape))
         # Retrieve N ROIs for test and ref images
         ROIs= getROIs(Features[layer],StackedFeatures[layer],img)
 #        print(ROIs)
@@ -206,7 +206,7 @@ def perform_VPR(VLAD,ref_map_features):
         
         cosineMatchScore = np.sum(np.einsum('ij,ij->i', VLAD, ref))
         #print("VLAD Matching Time: %f ms" %((te-ts)*1000))
-        print ("Score: %f" %cosineMatchScore)
+        print(("Score: %f" %cosineMatchScore))
         matching_scores.append(cosineMatchScore)     
         
     return np.amax(matching_scores), np.argmax(matching_scores),  np.asarray(matching_scores).reshape(len(ref_map_features))

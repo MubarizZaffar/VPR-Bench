@@ -24,7 +24,7 @@ class Hog_descriptor():
         gradient_magnitude, gradient_angle = self.global_gradient()
         gradient_magnitude = abs(gradient_magnitude)
         cell_gradient_vector = np.zeros((((height-self.cell_size) / stride)+1, ((width - self.cell_size)/stride)+1, self.bin_size))
-        print(cell_gradient_vector.shape)
+        print((cell_gradient_vector.shape))
         for i in range(cell_gradient_vector.shape[0]):
             for j in range(cell_gradient_vector.shape[1]):
                 cell_magnitude = gradient_magnitude[i * stride : (i*stride) + self.cell_size ,

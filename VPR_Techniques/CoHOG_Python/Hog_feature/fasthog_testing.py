@@ -33,6 +33,6 @@ hog = cv2.HOGDescriptor(winSize,blockSize,blockStride,cellSize,nbins,derivApertu
 #locations = ((10,20),)
 hist = hog.compute(image,winStride,padding,locations)
 #newhist=np.reshape(hist,[1024,8])
-print('Time',time.time()-start)
-print(len(hist))
+print(('Time',time.time()-start))
+print((len(hist)))
 #print(len(newhist),len(newhist[0]))

@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
-import netvlad_tf.net_from_mat as nfm
-import netvlad_tf.nets as nets
+from . import netvlad_tf.net_from_mat as nfm
+from . import netvlad_tf.nets as nets
 import time
 
 def compute_map_features(ref_map_images):
@@ -26,10 +26,10 @@ def compute_map_features(ref_map_images):
         batch = np.expand_dims(img, axis=0)
         t1=time.time()
         desc = sess.run(net_out, feed_dict={image_batch: batch})#[0][0:1024]
-        print('Encode Time: ', time.time()-t1)
+        print(('Encode Time: ', time.time()-t1))
         ref_desc.append(desc)
         
-        print(desc.shape)
+        print((desc.shape))
         
     return ref_desc
 
@@ -48,7 +48,7 @@ def compute_query_desc(image_query):
     
     batch = np.expand_dims(image_query, axis=0)
     query_desc = sess.run(net_out, feed_dict={image_batch: batch})#[0][0:1024] 
-    print(query_desc.shape) 
+    print((query_desc.shape)) 
     
     return query_desc
        
@@ -60,7 +60,7 @@ def perform_VPR(query_desc,ref_map_features):
         ref_desc=ref_map_features[i].astype('float64')
         match_score=np.dot(query_desc,ref_desc.T)
         t2=time.time()
-        print('NetVLAD tm:',t2-t1)
+        print(('NetVLAD tm:',t2-t1))
         all_scores.append(match_score)
     
     return np.amax(all_scores), np.argmax(all_scores),  np.asarray(all_scores).reshape(len(ref_map_features))
